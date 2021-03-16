@@ -24,7 +24,7 @@ namespace GoodFood.Views.Simple_WebForms
             OracleConnection con = new OracleConnection(constr);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT a.LoyalityPointsID,a.LoyalityPoint,a.DateTime,a.Duration,b.DishName FROM LoyalityPoints a,Dish b";
+            cmd.CommandText = "SELECT a.LoyalityPointsID,a.LoyalityPoint,a.DateTime,a.Duration,b.DishName FROM LoyalityPoints a join Dish b on a.loyalitypointsID = b.loyalitypointsID";
             cmd.CommandType = CommandType.Text;
 
             DataTable dt = new DataTable("LoyalityPoints");
