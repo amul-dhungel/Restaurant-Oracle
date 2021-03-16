@@ -10,13 +10,13 @@ using System.Web.UI.WebControls;
 
 namespace GoodFood.Views.Complex_WebForms
 {
-    public partial class CustomerOrder : System.Web.UI.Page
+    public partial class DishSearch : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
-                this.BindGrid();
+               this.BindGrid();
             }
         }
 
@@ -27,10 +27,8 @@ namespace GoodFood.Views.Complex_WebForms
 			OracleConnection con = new OracleConnection(constr);
 			con.Open();
 			cmd.Connection = con;
-			cmd.CommandText = @"select cs.customername as CustomerName,cs.customeremail,ol.orderamount,ol.orderdate,ds.dishname,ds.dishrate,do.orderunit,do.linetotal,ol.deliveryPoint
-							from Customer cs join Orders ol ON
-							cs.CustomerID = ol.CustomerID join DishOrder do
-							on ol.ordernumber = do.ordernumber join Dish ds on ol.dishid=ds.dishid";
+			cmd.CommandText = @"SELECT ds.dishname AS DishName,ds.localname,ds.dishrate, rs.restaurantname FROM Dish ds
+								join dishrestaurant drs ON ds.dishID = drs.dishID join restaurant rs on drs.restaurantid = rs.restaurantid";
 
 			cmd.CommandType = CommandType.Text;
 
@@ -43,23 +41,23 @@ namespace GoodFood.Views.Complex_WebForms
 
 			con.Close();
 
-			GridViewCustomerOrder.DataSource = dt;
-			GridViewCustomerOrder.DataBind();
+			GridViewDishes.DataSource = dt;
+			GridViewDishes.DataBind();
 		}
 
-	
 
-        protected void buttonSearch_Click1(object sender, EventArgs e)
-        {
-			string CustID = DropDownListCustomer.SelectedValue.ToString();
+
+		protected void buttonSearch_Click1(object sender, EventArgs e)
+		{
+			string CustID = DropDownListDish.SelectedItem.Value.ToString();
 			string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 			OracleCommand cmd = new OracleCommand();
 			OracleConnection con = new OracleConnection(constr);
 			con.Open();
 			cmd.Connection = con;
-			cmd.CommandText = @"select cs.customername as CustomerName,cs.customeremail,ol.orderamount,ol.orderdate,ds.dishname,ds.dishrate,do.orderunit,do.linetotal,ol.deliveryPoint
-								from Customer cs join Orders ol ON cs.CustomerID = ol.CustomerID join DishOrder do on ol.ordernumber = do.ordernumber join Dish ds on ol.dishid=ds.dishid
-								WHERE cs.CustomerID = '" + CustID + "'";
+			cmd.CommandText = @"SELECT ds.dishname AS DishName,ds.localname,ds.dishrate, rs.restaurantname FROM Dish ds
+								join dishrestaurant drs ON ds.dishID = drs.dishID join restaurant rs
+								on drs.restaurantid = rs.restaurantid where ds.dishID = '"+ CustID + "'";
 
 			cmd.CommandType = CommandType.Text;
 
@@ -72,8 +70,8 @@ namespace GoodFood.Views.Complex_WebForms
 
 			con.Close();
 
-			GridViewCustomerOrder.DataSource = dt;
-			GridViewCustomerOrder.DataBind();
+			GridViewDishes.DataSource = dt;
+			GridViewDishes.DataBind();
 		}
-    }
+	}
 }

@@ -110,13 +110,13 @@ namespace GoodFood.Views.Simple_WebForms
         protected void btnOrderInsert_Click(object sender, EventArgs e)
         {
             string sn = txtSN.Text.ToString();
-            var ordid = "ORD021";
+            var ordid = "ORD029";
             string orderamount = txtOrderAmount.Text.ToString();
             string deliverypoint = txtDeliveryPoint.Text.ToString();
             string status = DropDownListStatus.Text.ToString();
             string customer = DropDownListCustomers.SelectedItem.Value.ToString();
             string dish = DropDownListDishes.SelectedItem.Value.ToString();
-
+            //string ordid;
             string unit = txtOrderUnit.Text.ToString();
             string total = txtTotal.Text.ToString();
             string restaurant = DropDownListRestaurant.SelectedItem.Value.ToString();
@@ -132,16 +132,17 @@ namespace GoodFood.Views.Simple_WebForms
                     cmd.Connection = con;
                     con.Open();
                     cmd.ExecuteNonQuery();
-                   
+                   // ordid = cmd.Parameters["@OrderNumber"].Value.ToString();
                     con.Close();
-
+                    
                     txtSN.Text = null;
                     txtOrderAmount.Text = null;
                     txtDeliveryPoint.Text = null;
 
                 }
 
-                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishOrder(OrderNumber,OrderUnit,LineTotal,RestaurantID) VALUES ( '" + ordid + "','" + unit + "','" + total + "','" + restaurant + "')"))
+                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishOrder(OrderNumber,OrderUnit," +
+                    "LineTotal,RestaurantID) VALUES ( '" + ordid + "','" + unit + "','" + total + "','" + restaurant + "')"))
                 {
                     cmd.Connection = con;
                     con.Open();
