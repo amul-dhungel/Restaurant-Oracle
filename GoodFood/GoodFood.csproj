@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -48,6 +47,9 @@
   <ItemGroup>
     <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.5.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.5.2\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Oracle.DataAccess, Version=2.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
@@ -103,11 +105,6 @@
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -205,9 +202,51 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\assets\css\material-dashboard-rtl.css" />
+    <Content Include="Views\assets\css\material-dashboard.css" />
+    <Content Include="Views\assets\css\material-dashboard.min.css" />
+    <Content Include="Views\assets\img\apple-icon.png" />
+    <Content Include="Views\assets\img\bg2.jpg" />
+    <Content Include="Views\assets\img\city-profile.jpg" />
+    <Content Include="Views\assets\img\city.jpg" />
+    <Content Include="Views\assets\img\cover.jpg" />
+    <Content Include="Views\assets\img\faces\avatar.jpg" />
+    <Content Include="Views\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="Views\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="Views\assets\img\faces\marc.jpg" />
+    <Content Include="Views\assets\img\favicon.png" />
+    <Content Include="Views\assets\img\mask.png" />
+    <Content Include="Views\assets\img\new_logo.png" />
+    <Content Include="Views\assets\img\sidebar-1.jpg" />
+    <Content Include="Views\assets\img\sidebar-2.jpg" />
+    <Content Include="Views\assets\img\sidebar-3.jpg" />
+    <Content Include="Views\assets\img\sidebar-4.jpg" />
+    <Content Include="Views\assets\js\core\bootstrap-material-design.min.js" />
+    <Content Include="Views\assets\js\core\jquery.min.js" />
+    <Content Include="Views\assets\js\core\popper.min.js" />
+    <Content Include="Views\assets\js\material-dashboard.js" />
+    <Content Include="Views\assets\js\material-dashboard.min.js" />
+    <Content Include="Views\assets\js\plugins\arrive.min.js" />
+    <Content Include="Views\assets\js\plugins\bootstrap-datetimepicker.min.js" />
+    <Content Include="Views\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="Views\assets\js\plugins\bootstrap-selectpicker.js" />
+    <Content Include="Views\assets\js\plugins\bootstrap-tagsinput.js" />
+    <Content Include="Views\assets\js\plugins\chartist.min.js" />
+    <Content Include="Views\assets\js\plugins\fullcalendar.min.js" />
+    <Content Include="Views\assets\js\plugins\jasny-bootstrap.min.js" />
+    <Content Include="Views\assets\js\plugins\jquery-jvectormap.js" />
+    <Content Include="Views\assets\js\plugins\jquery.bootstrap-wizard.js" />
+    <Content Include="Views\assets\js\plugins\jquery.dataTables.min.js" />
+    <Content Include="Views\assets\js\plugins\jquery.tagsinput.js" />
+    <Content Include="Views\assets\js\plugins\jquery.validate.min.js" />
+    <Content Include="Views\assets\js\plugins\moment.min.js" />
+    <Content Include="Views\assets\js\plugins\nouislider.min.js" />
+    <Content Include="Views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Views\assets\js\plugins\sweetalert2.js" />
     <Content Include="Views\Complex WebForms\CustomerOrder.aspx" />
     <Content Include="Views\Complex WebForms\DishSearch.aspx" />
     <Content Include="Views\Complex WebForms\OrderActivity.aspx" />
+    <Content Include="Views\Homepage\Dashboard.aspx" />
     <Content Include="Views\Simple WebForms\Customer.aspx" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
@@ -253,14 +292,12 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Simple WebForms\Delivery.aspx" />
     <Content Include="Views\Simple WebForms\DeliveryAddress.aspx" />
     <Content Include="Views\Simple WebForms\Dish.aspx" />
     <Content Include="Views\Simple WebForms\DishOrder.aspx" />
     <Content Include="Views\Simple WebForms\LoyalityPoints.aspx" />
     <Content Include="Views\Simple WebForms\Order.aspx" />
     <Content Include="Views\Simple WebForms\Restaurant.aspx" />
-    <Content Include="Views\WebForm1.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -356,19 +393,19 @@
     <Compile Include="Views\Complex WebForms\OrderActivity.aspx.designer.cs">
       <DependentUpon>OrderActivity.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Homepage\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Homepage\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Simple WebForms\Customer.aspx.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Simple WebForms\Customer.aspx.designer.cs">
       <DependentUpon>Customer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Simple WebForms\Delivery.aspx.cs">
-      <DependentUpon>Delivery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Simple WebForms\Delivery.aspx.designer.cs">
-      <DependentUpon>Delivery.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Simple WebForms\DeliveryAddress.aspx.cs">
       <DependentUpon>DeliveryAddress.aspx</DependentUpon>
@@ -412,13 +449,6 @@
     <Compile Include="Views\Simple WebForms\Restaurant.aspx.designer.cs">
       <DependentUpon>Restaurant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -437,6 +467,172 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\assets\css\material-dashboard.css.map" />
+    <Content Include="Views\assets\js\material-dashboard.js.map" />
+    <Content Include="Views\assets\scss\material-dashboard.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_navbar-align.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_alert.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_badge.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_button-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_card.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_carousel.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_close.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_code.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_functions.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_grid.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_images.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_input-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_list-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_media.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_mixins.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_modal.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_nav.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_navbar.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_pagination.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_popover.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_print.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_progress.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_reboot.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_root.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_tables.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_transitions.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_type.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_utilities.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\bootstrap\scss\_variables.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\cards\_card-plain.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\cards\_card-profile.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\cards\_card-stats.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_alert.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_animations.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_breakpoints.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_chartist.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_drawer.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_hover.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_layout.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_navbar-colors.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_navs.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_sidebar-color.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_transparency.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_type.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_utilities.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_variables.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\mixins\_vendor-prefixes.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\plugins\_animate.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\plugins\_chartist.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\plugins\_perfect-scrollbar.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_body.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_bootstrap-material-design-base.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_bootstrap-material-design.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_brand.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_card.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_code.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_colors-map.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_colors.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_custom-forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_drawer.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_dropdown.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_layout.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_list-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_menu.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_modals.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_nav.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_pagination.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_shadow.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_snackbar.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_spacing.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_state.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_tables.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_tooltip.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\variables\_type.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_alerts.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_cards.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_checkboxes.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_core-bootstrap.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_dropdown.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_example-pages.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_fixed-plugin.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_footers.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_forms.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_headers.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_images.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_info-areas.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_input-group.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_misc.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_mixins.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_navbar.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_popover.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_popups.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_radios.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_responsive.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_ripples.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_sidebar-and-main-panel.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_social-buttons.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_tables.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_tabs.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_togglebutton.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_tooltip.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_type.scss" />
+    <Content Include="Views\assets\scss\material-dashboard\_variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -476,11 +672,12 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

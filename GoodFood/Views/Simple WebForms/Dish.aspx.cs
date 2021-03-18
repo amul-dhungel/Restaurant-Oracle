@@ -28,7 +28,8 @@ namespace GoodFood.Views.Simple_WebForms
             OracleConnection con = new OracleConnection(constr);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT a.DishID,a.DishName,a.LocalName,a.DishRate,b.RestaurantName from Dish a,Restaurant b";
+            cmd.CommandText = @"SELECT ds.dishID,ds.dishname AS DishName,ds.localname,ds.dishrate, rs.restaurantname FROM Dish ds
+                                join dishrestaurant drs ON ds.dishID = drs.dishID join restaurant rs on drs.restaurantid = rs.restaurantid";
             cmd.CommandType = CommandType.Text;
 
             DataTable dt = new DataTable("Dish");
@@ -113,7 +114,7 @@ namespace GoodFood.Views.Simple_WebForms
             string local = txtLocalName.Text.ToString();
             string rate = txtDishRate.Text.ToString();
             string Restaurant = DropDownListRestaurant.Text.ToString();
-            var id = GridViewDish.DataKeys;
+            string id;
 
             // ResID, ResName, ResAddress, ResPhone, ResEmail
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
@@ -121,12 +122,16 @@ namespace GoodFood.Views.Simple_WebForms
             using (OracleConnection con = new OracleConnection(constr))
             {
                 //using (OracleCommand cmd = new OracleCommand("INSERT INTO Restaurant(RestID, RestName, Address, Phone, Email) VALUES ('"+ id +"', '"+ name +"', '"+ address +"', '"+ phone +"', '"+ email +"')"))
-                using (OracleCommand cmd = new OracleCommand("INSERT INTO Dish(DishName,LocalName,DishRate) VALUES ( '" + name + "',  '" + local + "', '" + rate + "')"))
+                using (OracleCommand cmd = new OracleCommand("INSERT INTO Dish(DishName,LocalName,DishRate) VALUES ( '" + name + "',  '" + local + "', '" + rate + "') returning DishID into: DishID"))
                 {
                   
                     cmd.Connection = con;
                     con.Open();
+                    
+                    //cmd.Parameters.Add(new OracleParameter(id, OracleDbType.Decimal), ParameterDirection.ReturnValue);
+                    //id = cmd.Parameters["DishID"].Value.ToString();
                     cmd.ExecuteNonQuery();
+                
                     con.Close();
 
                     txtDishName.Text = null;
@@ -136,15 +141,16 @@ namespace GoodFood.Views.Simple_WebForms
 
                 }
 
-                var ids = "DSK017";
+                var ids = "DSK019";
                 string restaurant = DropDownListRestaurant.SelectedItem.Value.ToString();
-                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishRestaurant(RestaurantID,DishID) VALUES ('"+restaurant+"','"+ids+"')"))
+                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishRestaurant(RestaurantID,DishID) VALUES ('" + restaurant + "','" + ids + "')"))
                 {
 
                     cmd.Connection = con;
                     con.Open();
+
                     cmd.ExecuteNonQuery();
-                    
+
                     con.Close();
 
 
