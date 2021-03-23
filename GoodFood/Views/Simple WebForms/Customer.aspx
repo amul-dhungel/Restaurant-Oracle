@@ -29,73 +29,67 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="../Homepage/Dashboard.aspx">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  active ">
             <a class="nav-link" href="../Simple WebForms/Customer.aspx">
               <i class="material-icons">person</i>
               <p>Customer</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="../Simple WebForms/Restaurant.aspx">
               <i class="material-icons">takeout_dining</i>
               <p>Restaurant</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="../Simple WebForms/Dish.aspx">
               <i class="material-icons">ramen_dining</i>
               <p>Dish</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="../Simple WebForms/LoyalityPoints.aspx">
               <i class="material-icons">bubble_chart</i>
               <p>Loyalty Points</p>
             </a>
           </li>
-          <li class="nav-item active ">
-            <a class="nav-link" href="./map.html">
+          <li class="nav-item">
+            <a class="nav-link" href="../Simple WebForms/Order.aspx">
               <i class="material-icons">content_paste</i>
               <p>Order</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Delivery</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="../Simple WebForms/DeliveryAddress.aspx">
               <i class="material-icons">location_ons</i>
               <p>Delivery Address</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="../Simple WebForms/DishOrder.aspx">
               <i class="material-icons">content_paste</i>
               <p>Dish Order</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="../Complex WebForms/CustomerOrder.aspx">
               <i class="material-icons">person_search</i>
               <p>Customer Order</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="../Complex WebForms/DishSearch.aspx">
               <i class="material-icons">fastfood</i>
               <p>Dish Search</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="../Complex WebForms/OrderActivity.aspx">
               <i class="material-icons">menu_book</i>
               <p>Order Activity</p>
             </a>

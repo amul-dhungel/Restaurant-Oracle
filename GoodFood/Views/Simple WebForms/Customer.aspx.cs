@@ -47,27 +47,38 @@ namespace GoodFood.Views.Simple_WebForms
         //updating and deleting
         protected void OnRowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            GridViewRow row = GridViewCustomer.Rows[e.RowIndex];
-            var id = GridViewCustomer.DataKeys[e.RowIndex].Values[0];
-            string Name = (row.Cells[3].Controls[0] as TextBox).Text;
-            string PhoneNumber = (row.Cells[4].Controls[0] as TextBox).Text;
-            string Email = (row.Cells[5].Controls[0] as TextBox).Text;
-
-            string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-
-            using (OracleConnection con = new OracleConnection(constr))
+            try
             {
+                GridViewRow row = GridViewCustomer.Rows[e.RowIndex];
+                var id = GridViewCustomer.DataKeys[e.RowIndex].Values[0];
+                string Name = (row.Cells[3].Controls[0] as TextBox).Text;
+                string PhoneNumber = (row.Cells[4].Controls[0] as TextBox).Text;
+                string Email = (row.Cells[5].Controls[0] as TextBox).Text;
 
-                using (OracleCommand cmd = new OracleCommand("UPDATE Customer SET CustomerName ='" + Name + "',  PhoneNumber ='" + PhoneNumber + "',CustomerEmail = '" + Email + "' WHERE CustomerID ='" + id + "'"))
+                string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                if (Name == null) { }
+                else
                 {
-                    cmd.Connection = con;
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+
+                    using (OracleConnection con = new OracleConnection(constr))
+                    {
+
+                        using (OracleCommand cmd = new OracleCommand("UPDATE Customer SET CustomerName ='" + Name + "',  PhoneNumber ='" + PhoneNumber + "',CustomerEmail = '" + Email + "' WHERE CustomerID ='" + id + "'"))
+                        {
+                            cmd.Connection = con;
+                            con.Open();
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                    GridViewCustomer.EditIndex = -1;
+                    this.BindGrid();
                 }
             }
-            GridViewCustomer.EditIndex = -1;
-            this.BindGrid();
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)

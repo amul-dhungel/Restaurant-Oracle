@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" CodeFile="~/Views/Homepage/Dashboard.aspx.cs" Inherits="GoodFood.Views.Dashboard" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" CodeFile="~/Views/Homepage/Dashboard.aspx.cs"  Inherits="GoodFood.Views.Dashboard" %>
 
 <!DOCTYPE html>
 
@@ -16,7 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-      <div class="wrapper ">
+    <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -28,8 +28,8 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item active ">
+            <a class="nav-link" href="../Homepage/Dashboard.aspx">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -41,62 +41,56 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
+            <a class="nav-link" href="../Simple WebForms/Restaurant.aspx">
+              <i class="material-icons">takeout_dining</i>
               <p>Restaurant</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
+          <li class="nav-item">
+            <a class="nav-link" href="../Simple WebForms/Dish.aspx">
+              <i class="material-icons">ramen_dining</i>
               <p>Dish</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="../Simple WebForms/LoyalityPoints.aspx">
               <i class="material-icons">bubble_chart</i>
               <p>Loyalty Points</p>
             </a>
           </li>
-          <li class="nav-item active ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
+          <li class="nav-item ">
+            <a class="nav-link" href="../Simple WebForms/Order.aspx">
+              <i class="material-icons">content_paste</i>
               <p>Order</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Delivery</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
+            <a class="nav-link" href="../Simple WebForms/DeliveryAddress.aspx">
+              <i class="material-icons">location_ons</i>
               <p>Delivery Address</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
+            <a class="nav-link" href="../Simple WebForms/DishOrder.aspx">
+              <i class="material-icons">content_paste</i>
               <p>Dish Order</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
+            <a class="nav-link" href="../Complex WebForms/CustomerOrder.aspx">
+              <i class="material-icons">person_search</i>
               <p>Customer Order</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
+            <a class="nav-link" href="../Complex WebForms/DishSearch.aspx">
+              <i class="material-icons">fastfood</i>
               <p>Dish Search</p>
             </a>
           </li>
              <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
+            <a class="nav-link" href="../Complex WebForms/OrderActivity.aspx">
+              <i class="material-icons">menu_book</i>
               <p>Order Activity</p>
             </a>
           </li>
@@ -104,71 +98,31 @@
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
-        <div class="container-fluid">
+        <div class="row col px-md-5">
+
+        <div class="col-md-4 col-md-offset-2">
+       
+            </div>
+            <br /><br /><br />
+            </div>
+         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div data-background-color="white">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Map</a>
+            <a class="navbar-brand" href="javascript:;">Homepage</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-            <span class="navbar-toggler-icon icon-bar"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end">
-            <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <%--<span class="notification">5</span>--%>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
+            </div>
+            </nav>
+        <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Watch Now ! :)</h4>
+                  <p class="card-category">Here, is the demo video of our platform</p>
                 </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">person</i>
-                  <p class="d-lg-none d-md-block">
-                    Account
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+                <div class="card-body">
+        <video controls height="600px" width="540px" class="row col px-md-5">
+            <source src="goodfodd.mp4" />
+        </video>
+                    </div></div>
+   
       <!-- End Navbar -->
         </div>
           </div>

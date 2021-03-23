@@ -30,7 +30,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="../Homepage/Dashboard.aspx">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -59,7 +59,7 @@
               <p>Loyalty Points</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="../Simple WebForms/Order.aspx">
               <i class="material-icons">content_paste</i>
               <p>Order</p>
@@ -77,7 +77,7 @@
               <p>Dish Order</p>
             </a>
           </li>
-             <li class="nav-item ">
+             <li class="nav-item  active ">
             <a class="nav-link" href="../Complex WebForms/CustomerOrder.aspx">
               <i class="material-icons">person_search</i>
               <p>Customer Order</p>
@@ -129,8 +129,9 @@
                   <p class="card-category">Here, is the list of Orders made by Customer.</p>
                 </div>
                 <div class="card-body">
-        </div><div class="col px-md-5">
-        <asp:GridView ID="GridViewCustomerOrder" runat="server" CssClass="table" HorizontalAlign="Center" ></asp:GridView></div></div>
+
+        <div class="col px-md-5">
+        <asp:GridView ID="GridViewCustomerOrder" runat="server" CssClass="table" HorizontalAlign="Center" ></asp:GridView></div></div></div>
     </form>
             </div></div></div>
 </body>

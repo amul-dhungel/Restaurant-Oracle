@@ -27,7 +27,9 @@ namespace GoodFood.Views.Simple_WebForms
             OracleConnection con = new OracleConnection(constr);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT DishOrderID,OrderNumber,OrderUnit,LineTotal,RestaurantID FROM DishOrder";
+            cmd.CommandText = @"SELECT ds.DishOrderID,cs.customername,ds.OrderUnit,ds.LineTotal,dsk.dishname,rs.restaurantname FROM DishOrder ds join
+                               restaurant rs on ds.restaurantid=rs.restaurantid join orders ors on ds.ordernumber = ors.ordernumber
+                                join customer cs on ors.customerid = cs.customerid join dish dsk on ors.dishid = dsk.dishid";
             cmd.CommandType = CommandType.Text;
 
             DataTable dt = new DataTable("DishOrder");
@@ -50,14 +52,14 @@ namespace GoodFood.Views.Simple_WebForms
             var id = GridViewDishOrder.DataKeys[e.RowIndex].Values[0];
             string Name = (row.Cells[3].Controls[0] as TextBox).Text;
             string PhoneNumber = (row.Cells[4].Controls[0] as TextBox).Text;
-            string Email = (row.Cells[5].Controls[0] as TextBox).Text;
+            
 
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
             using (OracleConnection con = new OracleConnection(constr))
             {
 
-                using (OracleCommand cmd = new OracleCommand("UPDATE Customer SET CustomerName ='" + Name + "',  PhoneNumber ='" + PhoneNumber + "',CustomerEmail = '" + Email + "' WHERE CustomerID ='" + id + "'"))
+                using (OracleCommand cmd = new OracleCommand("UPDATE DishOrder SET OrderUnit ='" + Name + "',  LineTotal ='" + PhoneNumber + "'"))
                 {
                     cmd.Connection = con;
                     con.Open();
@@ -75,7 +77,7 @@ namespace GoodFood.Views.Simple_WebForms
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             using (OracleConnection con = new OracleConnection(constr))
             {
-                using (OracleCommand cmd = new OracleCommand("DELETE FROM Customer WHERE CustomerID ='" + id + "'"))
+                using (OracleCommand cmd = new OracleCommand("DELETE FROM DishOrder WHERE DishOrderID ='" + id + "'"))
                 {
                     cmd.Connection = con;
                     con.Open();

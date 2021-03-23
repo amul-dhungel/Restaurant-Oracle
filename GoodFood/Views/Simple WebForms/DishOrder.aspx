@@ -29,7 +29,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="../Homepage/Dashboard.aspx">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -58,7 +58,7 @@
               <p>Loyalty Points</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
             <a class="nav-link" href="../Simple WebForms/Order.aspx">
               <i class="material-icons">content_paste</i>
               <p>Order</p>
@@ -70,7 +70,7 @@
               <p>Delivery Address</p>
             </a>
           </li>
-             <li class="nav-item ">
+             <li class="nav-item  active ">
             <a class="nav-link" href="../Simple WebForms/DishOrder.aspx">
               <i class="material-icons">content_paste</i>
               <p>Dish Order</p>

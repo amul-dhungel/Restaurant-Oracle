@@ -28,7 +28,8 @@ namespace GoodFood.Views.Simple_WebForms
             OracleConnection con = new OracleConnection(constr);
             con.Open();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT OrderNumber,SN,OrderAmount,DeliveryPoint,Status,OrderDate,DishID,CustomerID FROM Orders";
+            cmd.CommandText = "SELECT OrderNumber,SN,OrderAmount,DeliveryPoint,Status," +
+                "OrderDate,DishID,CustomerID FROM Orders";
             cmd.CommandType = CommandType.Text;
 
             DataTable dt = new DataTable("Order");
@@ -52,7 +53,7 @@ namespace GoodFood.Views.Simple_WebForms
             string SN = (row.Cells[3].Controls[0] as TextBox).Text;
             string OrderAmount = (row.Cells[4].Controls[0] as TextBox).Text;
             string DeliveryPoint = (row.Cells[5].Controls[0] as TextBox).Text;
-            string Status = (row.Cells[5].Controls[0] as TextBox).Text;
+            string Status = (row.Cells[6].Controls[0] as TextBox).Text;
            
             string constr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
@@ -110,7 +111,7 @@ namespace GoodFood.Views.Simple_WebForms
         protected void btnOrderInsert_Click(object sender, EventArgs e)
         {
             string sn = txtSN.Text.ToString();
-            var ordid = "ORD029";
+            var ordid = "ORD047";
             string orderamount = txtOrderAmount.Text.ToString();
             string deliverypoint = txtDeliveryPoint.Text.ToString();
             string status = DropDownListStatus.Text.ToString();

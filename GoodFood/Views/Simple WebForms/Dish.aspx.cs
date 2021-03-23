@@ -127,11 +127,8 @@ namespace GoodFood.Views.Simple_WebForms
                   
                     cmd.Connection = con;
                     con.Open();
-                    
-                    //cmd.Parameters.Add(new OracleParameter(id, OracleDbType.Decimal), ParameterDirection.ReturnValue);
-                    //id = cmd.Parameters["DishID"].Value.ToString();
                     cmd.ExecuteNonQuery();
-                
+         
                     con.Close();
 
                     txtDishName.Text = null;
@@ -141,9 +138,9 @@ namespace GoodFood.Views.Simple_WebForms
 
                 }
 
-                var ids = "DSK019";
+                var ids = "DSK022";
                 string restaurant = DropDownListRestaurant.SelectedItem.Value.ToString();
-                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishRestaurant(RestaurantID,DishID) VALUES ('" + restaurant + "','" + ids + "')"))
+                using (OracleCommand cmd = new OracleCommand("INSERT INTO DishRestaurant(RestaurantID,DishID) VALUES ('" + "RES015" + "','" + ids + "')"))
                 {
 
                     cmd.Connection = con;
